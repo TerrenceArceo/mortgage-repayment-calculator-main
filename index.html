@@ -7,15 +7,55 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:wght@400;900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="style.css">
   <title>Mortgage repayment calculator</title>
 </head>
 <body>
+  <div class="container">
+    <h1 class="title">Mortgage Calculator</h1>
+    <button class="clear-btn">Clear All</button>
 
-  Mortgage Calculator
-  Clear All
+    <form>
+      <label for="amount">Mortgage Amount</label>
+      <div class="input-box">
+        <span class="unit">£</span>
+        <input type="text" id="amount" name="amount">
+      </div>
 
-  Mortgage Amount
+      <label for="term">Mortgage Term</label>
+      <div class="input-box">
+        <input type="text" id="term" name="term">
+        <span class="unit">years</span>
+      </div>
+
+      <label for="rate">Interest Rate</label>
+      <div class="input-box">
+        <input type="text" id="rate" name="rate">
+        <span class="unit">%</span>
+      </div>
+
+      
+      <fieldset>
+        <legend>Mortgage Type</legend>
+        <div class="repayment-radio">
+          <input type="radio" id="repayment" name="mortgagetype">
+          <label for="repayment">Repayment</label>
+        </div>
+        <div class="interest-radio">
+          <input type="radio" id="interest" name="mortgagetype">
+          <label for="interest">Interest Only</label>
+        </div>
+      </fieldset>
+
+      <button type="submit" class="submit-btn" id="submit-btn">
+        <i class="fa-solid fa-calculator"></i>
+        Calculate Repayments
+      </button>
+    </form>
+  </div>
+
+ 
 
   Mortgage Term
 

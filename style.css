@@ -6,3 +6,34 @@ body {
     font-family: "Plus Jakarta Sans", serif;
     background-color: #E4F4FD;
 }
+
+.container {
+    background-color: #fff;
+}
+
+.input-box {
+    border: 1px solid #6B94A8;
+    display: flex;
+}
+
+input[type="text"] {
+    border: none;
+    padding-left: .5em;
+    width: 100%;
+}
+
+.unit {
+    padding: 0 .5em;
+    background-color: #E4F4FD;
+    color: #4E6E7E;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+}
+
+/* .repayment-radio,
+.interest-radio {
+    
+} */
