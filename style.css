@@ -5,15 +5,57 @@
 body {
     font-family: "Plus Jakarta Sans", serif;
     background-color: #E4F4FD;
+    color: #4E6E7E;
 }
 
-.container {
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+
+h1, .submit-btn {
+    color: #133041;
+}
+
+input[type="text"],
+.repayment-radio,
+.interest-radio,
+.unit,
+.submit-btn {
+    font-size: 1.125rem;
+}
+
+.clear-btn {
+    display: block;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid #4E6E7E;
+    padding: 0;
+    margin: .5em 0  1.5em;
+    color: #4E6E7E;
+}
+
+.main-layout {
+    display: grid;
+    grid-template-columns: 1em 1fr 1em;
     background-color: #fff;
 }
 
+.container {
+    grid-column: 2 / span 1;
+}
+
+.input-box {
+    display: flex;
+    margin: .5em 0 1.5em;
+    align-items: center;
+}
+
+.repayment-radio,
+.interest-radio,
 .input-box {
     border: 1px solid #6B94A8;
-    display: flex;
+    border-radius: 4px;
 }
 
 input[type="text"] {
@@ -23,9 +65,11 @@ input[type="text"] {
 }
 
 .unit {
-    padding: 0 .5em;
+    padding: .6em;
     background-color: #E4F4FD;
     color: #4E6E7E;
+    font-weight: bold;
+    border-radius: 4px 4px 4px 4px;
 }
 
 fieldset {
@@ -33,7 +77,23 @@ fieldset {
     padding: 0;
 }
 
-/* .repayment-radio,
+legend {
+    margin-bottom: 1em;
+}
+
+.repayment-radio,
 .interest-radio {
-    
-} */
+    padding: .6em;
+    margin-bottom: .5em;
+    font-weight: bold;
+}
+
+.submit-btn {
+    border: none;
+    background-color: #D8DB2F;
+    width: 100%;
+    margin-top: 1.3rem;
+    padding: 1em 2.5em;
+    border-radius: 999px;
+    cursor: pointer;
+}

@@ -12,87 +12,48 @@
   <title>Mortgage repayment calculator</title>
 </head>
 <body>
-  <div class="container">
-    <h1 class="title">Mortgage Calculator</h1>
-    <button class="clear-btn">Clear All</button>
+  <main class="main-layout">
+      <form class="container">
+        <h1 class="title">Mortgage Calculator</h1>
+        <button class="clear-btn">Clear All</button>
 
-    <form>
-      <label for="amount">Mortgage Amount</label>
-      <div class="input-box">
-        <span class="unit">£</span>
-        <input type="text" id="amount" name="amount">
-      </div>
-
-      <label for="term">Mortgage Term</label>
-      <div class="input-box">
-        <input type="text" id="term" name="term">
-        <span class="unit">years</span>
-      </div>
-
-      <label for="rate">Interest Rate</label>
-      <div class="input-box">
-        <input type="text" id="rate" name="rate">
-        <span class="unit">%</span>
-      </div>
-
-      
-      <fieldset>
-        <legend>Mortgage Type</legend>
-        <div class="repayment-radio">
-          <input type="radio" id="repayment" name="mortgagetype">
-          <label for="repayment">Repayment</label>
+        <label for="amount">Mortgage Amount</label>
+        <div class="input-box">
+          <span class="unit">£</span>
+          <input type="text" id="amount" name="amount">
         </div>
-        <div class="interest-radio">
-          <input type="radio" id="interest" name="mortgagetype">
-          <label for="interest">Interest Only</label>
+
+        <label for="term">Mortgage Term</label>
+        <div class="input-box">
+          <input type="text" id="term" name="term">
+          <span class="unit">years</span>
         </div>
-      </fieldset>
 
-      <button type="submit" class="submit-btn" id="submit-btn">
-        <i class="fa-solid fa-calculator"></i>
-        Calculate Repayments
-      </button>
-    </form>
-  </div>
+        <label for="rate">Interest Rate</label>
+        <div class="input-box">
+          <input type="text" id="rate" name="rate">
+          <span class="unit">%</span>
+        </div>
 
- 
+        
+        <fieldset>
+          <legend>Mortgage Type</legend>
+          <div class="repayment-radio">
+            <input type="radio" id="repayment" name="mortgagetype">
+            <label for="repayment">Repayment</label>
+          </div>
+          <div class="interest-radio">
+            <input type="radio" id="interest" name="mortgagetype">
+            <label for="interest">Interest Only</label>
+          </div>
+        </fieldset>
 
-  Mortgage Term
-
-  Interest Rate
-
-  Mortgage Type
-  Repayment
-  Interest Only
-
-  Calculate Repayments
-
-  <!-- Empty results start -->
-
-  Results shown here
-
-  Complete the form and click “calculate repayments” to see what 
-  your monthly repayments would be.
-
-  <!-- Empty results end -->
-
-  <!-- Completed results start -->
-
-  Your results
-
-  Your results are shown below based on the information you provided. 
-  To adjust the results, edit the form and click “calculate repayments” again.
-
-  Your monthly repayments
-
-  Total you'll repay over the term
-
-  <!-- Completed results end -->
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+        <button type="submit" class="submit-btn" id="submit-btn">
+          <i class="fa-solid fa-calculator"></i>
+          Calculate Repayments
+        </button>
+      </form>
+  </main>
 
   <script src="index.js"></script>
 </body>
