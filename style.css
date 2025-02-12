@@ -134,3 +134,46 @@ legend {
 #results-section p {
     color: #9ABED5;
 }
+
+/* ==================
+    tablet screen size styling
+==================== */
+
+@media (min-width: 675px) {
+    .main-layout {
+        grid-template-columns: 2em 1fr 1em 1fr 2em;
+        grid-template-areas: 
+            ". title . clear ."
+            ". lamount . . ."
+            ". amount amount amount ."
+            ". lterm . lrate ."
+            ". term . rate ."
+            ". field field field ."
+            ". submit . . .";
+    }
+
+    .title { 
+        grid-area: title;
+        margin-bottom: 1em; 
+    }
+
+    .clear-btn {
+        grid-area: clear;
+        justify-self: end;
+        margin: 0;
+        align-self: center;
+    }
+
+    .label-amount { grid-area: lamount;}
+    .amount { grid-area: amount;  }
+
+    .label-term { grid-area: lterm;}
+    .term { grid-area: term; }
+
+    .label-term { grid-area: lrate;}
+    .rate { grid-area: rate; }
+
+    fieldset { grid-area: field; }
+
+    .submit-btn { grid-area: submit; }
+}
