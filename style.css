@@ -27,8 +27,7 @@ h1, .submit-btn {
     background-color: #fff;
 }
 
-h1,
-.clear-btn,
+.top,
 .input-box,
 label,
 fieldset,
@@ -139,29 +138,32 @@ legend {
     tablet screen size styling
 ==================== */
 
-@media (min-width: 675px) {
+@media (min-width: 670px) {
     .main-layout {
         grid-template-columns: 2em 1fr 1em 1fr 2em;
         grid-template-areas: 
-            ". title . clear ."
+            ". top top top ."
             ". lamount . . ."
             ". amount amount amount ."
             ". lterm . lrate ."
             ". term . rate ."
             ". field field field ."
-            ". submit . . .";
+            ". submit submit submit .";
+    }
+
+    .top {
+        grid-area: top;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
     .title { 
-        grid-area: title;
         margin-bottom: 1em; 
     }
 
     .clear-btn {
-        grid-area: clear;
-        justify-self: end;
         margin: 0;
-        align-self: center;
     }
 
     .label-amount { grid-area: lamount;}
@@ -175,5 +177,39 @@ legend {
 
     fieldset { grid-area: field; }
 
-    .submit-btn { grid-area: submit; }
+    .submit-btn { 
+        grid-area: submit; 
+        width: 50%;
+    }
+}
+
+@media (min-width: 1000px) {
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main {
+        display: flex;
+        background-color: #fff;
+    }
+
+    #results-section {
+        border-bottom-left-radius: 80px;
+    }
+
+    .submit-btn {
+        width: 75%;
+    }
+
+    .col-1 {
+        width: 50%;
+        min-width: 750px;
+    }
+
+    .col-2 {
+        width: 50%;
+    }
 }
