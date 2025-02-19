@@ -13,7 +13,7 @@
 </head>
 <body>
   <main class="main col-1">
-      <form class="main-layout">
+      <form class="main-layout" id="form">
         <div class="top">
           <h1 class="title">Mortgage Calculator</h1>
           <button class="clear-btn">Clear All</button>
@@ -41,11 +41,11 @@
         <fieldset>
           <legend>Mortgage Type</legend>
           <div class="repayment-radio">
-            <input type="radio" id="repayment" name="mortgagetype" required>
+            <input type="radio" id="repayment" name="mortgagetype" value="repayment" required>
             <label for="repayment">Repayment</label>
           </div>
           <div class="interest-radio">
-            <input type="radio" id="interest" name="mortgagetype" required>
+            <input type="radio" id="interest" name="mortgagetype" value="interest">
             <label for="interest">Interest Only</label>
           </div>
         </fieldset>
