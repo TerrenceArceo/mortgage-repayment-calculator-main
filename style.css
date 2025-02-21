@@ -35,7 +35,9 @@ fieldset,
     grid-column: 2 / span 1;
 }
 
-
+.top {
+    margin-top: 1em;
+}
 
 /* ========================== 
     form styling
@@ -180,7 +182,6 @@ input[type="radio"] {
 #results-section {
     background-color: #133041;
     padding: 2em;
-    text-align: center;
 }
 
 #results-section h2 {
@@ -189,6 +190,40 @@ input[type="radio"] {
 
 #results-section p {
     color: #9ABED5;
+}
+
+.empty-result-section {
+    text-align: center;
+}
+
+/* ======================
+    main results section
+======================== */
+
+.result-info-section h2 {
+    margin-top: 0;
+}
+
+.result-numbers-container {
+    background-color: rgba(0, 0, 0, 25%);
+    border-top: 4px solid #D8DB2F;
+    border-radius: 8px;
+    padding: 1em 1em;
+}
+
+.main-result-section {
+    border-bottom: 1px solid rgba(154, 190, 213, 25%);
+}
+
+.main-result {
+    color: #D8DB2F;
+    font-size: 40px;
+    margin: 0 0 .5em;
+}
+
+.total-payment {
+    color: #fff;
+    font-size: 1.5rem;
 }
 
 /* ==================
@@ -239,6 +274,12 @@ input[type="radio"] {
         grid-area: submit; 
         width: 50%;
     }
+
+    .main-result {
+        color: #D8DB2F;
+        font-size: 56px;
+        margin: 0 0 .5em;
+    }
 }
 
 @media (min-width: 1000px) {
@@ -253,6 +294,7 @@ input[type="radio"] {
         display: flex;
         justify-content: space-between;
         background-color: #fff;
+        max-width: 1008px;
     }
 
     #results-section {
@@ -264,7 +306,6 @@ input[type="radio"] {
     }
 
     .col-1 {
-        min-width: 750px;
         width: 50%;
     }
 
