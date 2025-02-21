@@ -5,11 +5,13 @@ const term = document.getElementById('term')
 const rate = document.getElementById('rate')
 const repayment = document.getElementById('repayment')
 const interest = document.getElementById('interest')
+let monthlyPayment = 0
 
 form.addEventListener("submit", (e) => {
     e.preventDefault()
     calculateMonthlyPayment(amount.value, rate.value, term.value)
     getRadioValue()
+    repaymentOverTime(term.value)
 })
 
 function calculateMonthlyPayment(principal, interestRate, loanTermYears) {
@@ -17,12 +19,18 @@ function calculateMonthlyPayment(principal, interestRate, loanTermYears) {
 
     const monthlyInterestRate = interestRate / 1200
     const numberOfPayments = loanTermYears * 12
-    const monthlyPayment =
+    const payment =
       (convertedPrincipal * monthlyInterestRate) /
       (1 - Math.pow(1 + monthlyInterestRate, -numberOfPayments))
     
-    console.log(monthlyPayment.toFixed(2))
-    return monthlyPayment.toFixed(2)
+    console.log(payment.toFixed(2))
+    monthlyPayment = payment.toFixed(2)
+  }
+
+  function repaymentOverTime(loanTermYears) {
+    let paymentOverTime = (monthlyPayment * 12) * loanTermYears
+    console.log(paymentOverTime.toLocaleString())
+    return paymentOverTime
   }
 
   function getRadioValue() {
