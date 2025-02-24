@@ -9,13 +9,14 @@ let monthlyPayment = 0
 let totalPaymentOvertime = 0
 let totalInterestValue = 0
 let html = ''
+let radioValue = ''
 
 form.addEventListener("submit", (e) => {
     e.preventDefault()
-    console.log("submitted!")
     calculateMonthlyPayment(amount.value, rate.value, term.value)
-    getRadioValue()
     repaymentOverTime(term.value)
+    calculateTotalInterest(amount.value)
+    getRadioValue()
     renderResults()
 })
 
@@ -28,17 +29,16 @@ function calculateMonthlyPayment(principal, interestRate, loanTermYears) {
       (convertedPrincipal * monthlyInterestRate) /
       (1 - Math.pow(1 + monthlyInterestRate, -numberOfPayments))
     
-    console.log(payment.toFixed(2))
-    monthlyPayment = payment.toFixed(2)
+    monthlyPayment = payment.toLocaleString()
 }
 
 function calculateTotalInterest(principal) {
-  totalInterestValue = totalPaymentOvertime - principal
+  let convertedPrincipal = principal.replace(/,/g, "")
+  totalInterestValue = totalPaymentOvertime - convertedPrincipal
 }
 
 function repaymentOverTime(loanTermYears) {
   let paymentOverTime = (monthlyPayment * 12) * loanTermYears
-  console.log(paymentOverTime.toLocaleString())
   totalPaymentOvertime = paymentOverTime
 }
 
@@ -47,7 +47,7 @@ function getRadioValue() {
 
   for (let i = 0; i < radio.length; i++) {
       if (radio[i].checked) {
-          console.log(radio[i].value)
+        radioValue = radio[i].value
       }
   }
 }
@@ -55,22 +55,41 @@ function getRadioValue() {
 
 function renderResults() {
     if (form.checkValidity()) {
-      html = `
-        <div class="result-info-section">
-          <h2 class="result-title">Your results</h2>
-          <p class="result-subtitle">Your results are shown below based on the information you provided. To adjust the results, edit the form and click “calculate repayments” again.</p>
-          <div class="result-numbers-container">
-            <div class="main-result-section">
-              <p>Your monthly repayments</p>
-              <h3 class="main-result">£${monthlyPayment}</h3>
-            </div>
-            <div class="total-payment-section">
-              <p>Total you'll repay over the term</p>
-              <h4 class="total-payment">£${totalPaymentOvertime.toLocaleString()}</h4>
+      if (radioValue === 'repayment') {
+        html = `
+          <div class="result-info-section">
+            <h2 class="result-title">Your results</h2>
+            <p class="result-subtitle">Your results are shown below based on the information you provided. To adjust the results, edit the form and click “calculate repayments” again.</p>
+            <div class="result-numbers-container">
+              <div class="main-result-section">
+                <p>Your monthly repayments</p>
+                <h3 class="main-result">£${monthlyPayment}</h3>
+              </div>
+              <div class="total-payment-section">
+                <p>Total you'll repay over the term</p>
+                <h4 class="total-payment">£${totalPaymentOvertime.toLocaleString()}</h4>
+              </div>
             </div>
           </div>
-        </div>
-      `
+        `
+      } else {
+        html = `
+          <div class="result-info-section">
+            <h2 class="result-title">Your results</h2>
+            <p class="result-subtitle">Your results are shown below based on the information you provided. To adjust the results, edit the form and click “calculate repayments” again.</p>
+            <div class="result-numbers-container">
+              <div class="main-result-section">
+                <p>Your total interest payment</p>
+                <h3 class="main-result">£${totalInterestValue.toLocaleString()}</h3>
+              </div>
+              <div class="total-payment-section">
+                <p>Total you'll repay over the term</p>
+                <h4 class="total-payment">£${totalPaymentOvertime.toLocaleString()}</h4>
+              </div>
+            </div>
+          </div>
+        `
+      }
     } else {
       html = `
         <div class="empty-result-section">
