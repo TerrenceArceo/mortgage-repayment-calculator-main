@@ -22,18 +22,18 @@
         <label for="amount" class="label-amount">Mortgage Amount</label>
         <div class="input-box amount">
           <span class="unit left">£</span>
-          <input type="text" id="amount" name="amount" required>
+          <input type="text" id="amount" name="amount" data-amount="amount" required>
         </div>
 
         <label for="term" class="label-term">Mortgage Term</label>
         <div class="input-box term">
-          <input type="text" id="term" name="term" required>
+          <input type="text" id="term" name="term" data-term="term" required>
           <span class="unit right">years</span>
         </div>
 
         <label for="rate" class="label-rate">Interest Rate</label>
         <div class="input-box rate">
-          <input type="text" id="rate" name="rate" required>
+          <input type="text" id="rate" name="rate" data-rate="rate" required>
           <span class="unit right">%</span>
         </div>
 
@@ -41,11 +41,11 @@
         <fieldset>
           <legend>Mortgage Type</legend>
           <div class="repayment-radio">
-            <input type="radio" id="repayment" name="mortgagetype" value="repayment" required>
+            <input type="radio" id="repayment" name="mortgagetype" value="repayment" data-repayment="repayment" required>
             <label for="repayment">Repayment</label>
           </div>
           <div class="interest-radio">
-            <input type="radio" id="interest" name="mortgagetype" value="interest">
+            <input type="radio" id="interest" name="mortgagetype" value="interest" data-interest="interest">
             <label for="interest">Interest Only</label>
           </div>
         </fieldset>

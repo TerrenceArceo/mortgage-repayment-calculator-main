@@ -12,6 +12,41 @@ let totalInterestValue = 0
 let html = ''
 let radioValue = ''
 
+document.addEventListener("focus", (e) => {
+  e.preventDefault()
+  if (e.target.dataset.amount) {
+    e.target.previousElementSibling.style.backgroundColor = "#D8DB2F"
+  } else if (e.target.dataset.term) {
+    e.target.nextElementSibling.style.backgroundColor = "#D8DB2F"
+  } else if (e.target.dataset.rate) {
+    e.target.nextElementSibling.style.backgroundColor = "#D8DB2F"
+  } else if (e.target.dataset.repayment) {
+    e.target.parentElement.style.border = "1px solid #D8DB2F"
+    e.target.parentElement.style.backgroundColor = "rgba(216, 219, 47, 15%)"
+  } else if (e.target.dataset.interest) {
+    e.target.parentElement.style.border = "1px solid #D8DB2F"
+    e.target.parentElement.style.backgroundColor = "rgba(216, 219, 47, 15%)"
+  }
+}, true)
+
+document.addEventListener("blur", (e) => {
+  e.preventDefault()
+  if (e.target.dataset.amount) {
+    e.target.previousElementSibling.style.backgroundColor = "#E4F4FD"
+  } else if (e.target.dataset.term) {
+    e.target.nextElementSibling.style.backgroundColor = "#E4F4FD"
+  } else if (e.target.dataset.rate) {
+    e.target.nextElementSibling.style.backgroundColor = "#E4F4FD"
+  } else if (e.target.dataset.repayment) {
+    e.target.parentElement.style.border = "1px solid #6B94A8"
+    e.target.parentElement.style.backgroundColor = "#fff"
+  } else if (e.target.dataset.interest) {
+    e.target.parentElement.style.border = "1px solid #6B94A8"
+    e.target.parentElement.style.backgroundColor = "#fff"
+  }
+}, true)
+
+
 clearBtn.addEventListener("click", () => {
   amount.value = ""
   term.value = ""

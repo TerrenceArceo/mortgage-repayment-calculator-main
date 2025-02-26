@@ -99,7 +99,8 @@ input[id="amount"] {
 }
 
 input[type="text"]:hover,
-input[type="text"]:focus  {
+input[type="text"]:focus,
+input[type="text"]:active  {
     border: 1px solid #D8DB2F;
     outline: none;
 }
@@ -153,12 +154,23 @@ legend {
     border: 1px solid #D8DB2F;
 }
 
-.repayment-radio {
-    margin-bottom: .5em;
+input[type="radio"] {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-clip: content-box;
+    border: 1px solid #000;
 }
 
-input[type="radio"] {
-    background-color: red;
+input[type="radio"]:checked {
+    border: 1px solid #D8DB2F;
+    background-color: #D8DB2F;
+    padding: .2em;
+}
+
+.repayment-radio {
+    margin-bottom: .5em;
 }
 
 .submit-btn {
