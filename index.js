@@ -1,5 +1,6 @@
 const resultsHtml = document.getElementById('results-section')
 const form = document.getElementById('form')
+const clearBtn = document.getElementById("clear-btn")
 const amount = document.getElementById('amount')
 const term = document.getElementById('term')
 const rate = document.getElementById('rate')
@@ -10,6 +11,17 @@ let totalPaymentOvertime = 0
 let totalInterestValue = 0
 let html = ''
 let radioValue = ''
+
+clearBtn.addEventListener("click", () => {
+  amount.value = ""
+  term.value = ""
+  rate.value = ""
+
+  const type = document.getElementsByName("mortgagetype")
+  for (let i = 0; i < type.length; i++) {
+    type[i].checked = false
+  }
+})
 
 form.addEventListener("submit", (e) => {
     e.preventDefault()
@@ -38,7 +50,8 @@ function calculateTotalInterest(principal) {
 }
 
 function repaymentOverTime(loanTermYears) {
-  let paymentOverTime = (monthlyPayment * 12) * loanTermYears
+  let convertedMonthlyPayment = monthlyPayment.replace(/,/g, "")
+  let paymentOverTime = (convertedMonthlyPayment * 12) * loanTermYears
   totalPaymentOvertime = paymentOverTime
 }
 

@@ -101,6 +101,7 @@ input[id="amount"] {
 input[type="text"]:hover,
 input[type="text"]:focus  {
     border: 1px solid #D8DB2F;
+    outline: none;
 }
 
 .unit {
