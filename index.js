@@ -12,6 +12,8 @@ let totalInterestValue = 0
 let html = ''
 let radioValue = ''
 
+console.log(amount.value)
+
 document.addEventListener("focus", (e) => {
   e.preventDefault()
   if (e.target.dataset.amount) {
@@ -56,6 +58,16 @@ clearBtn.addEventListener("click", () => {
   for (let i = 0; i < type.length; i++) {
     type[i].checked = false
   }
+
+  html = `
+      <div class="empty-result-section">
+          <img src="../assets/images/illustration-empty.svg" alt="picture of money, calculator, and a board, illustrating an empty result" class="empty-result-icon">
+          <h2 class="result-title">Results shown here</h2>
+          <p class="result-subtitle">Complete the form and click "calculate repayments" to see what your monthly repayments would be.</p>
+      </div>
+    `
+
+  renderResults()
 })
 
 form.addEventListener("submit", (e) => {
